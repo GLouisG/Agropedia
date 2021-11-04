@@ -15,7 +15,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-
+from django.conf.urls import url
+from django.urls.conf import include
+from django.contrib.auth import views
+from django.urls import reverse_lazy
 urlpatterns = [
     path('admin/', admin.site.urls),
+    url(r'', include('app.urls')),
+      
 ]
