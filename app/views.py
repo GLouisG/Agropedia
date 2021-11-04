@@ -14,7 +14,7 @@ import numpy as np
 
 
 excel = pd.read_excel('crop.xlsx', header = 0)                                      
-print(excel)                                                              # Printing our excel file data.
+print(excel)                                                              
 print(excel.shape)
 
 le = preprocessing.LabelEncoder()

@@ -47,13 +47,15 @@ INSTALLED_APPS = [
     'cloudinary',
     'rest_framework',    
     'app.apps.AppConfig', 
-    'drf_yasg'   
+    'drf_yasg',   
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -173,4 +175,9 @@ api_secret='TTGJ37uyV4JWR0vbeAyhxQGRhB8'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:4200', 'agropedia'
+]
+
 django_heroku.settings(locals())
