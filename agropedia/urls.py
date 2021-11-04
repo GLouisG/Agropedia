@@ -19,8 +19,24 @@ from django.conf.urls import url
 from django.urls.conf import include
 from django.contrib.auth import views
 from django.urls import reverse_lazy
+
+from rest_framework import permissions
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
+schema_view = get_schema_view(
+   openapi.Info(
+      title="Agropedia API",
+      default_version='v1',
+      description="API for Agropedia",
+      terms_of_service="https://www.agropedia.com/policies/terms/",
+      contact=openapi.Contact(email="agropidea@google.local"),
+      license=openapi.License(name="AGRO License"),
+   ),
+   public=True,
+   permission_classes=(permissions.AllowAny,),
+)
 urlpatterns = [
     path('admin/', admin.site.urls),
-    url(r'', include('app.urls')),
-      
+    url(r'', include('app.urls')),     
+    url('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),    
 ]

@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'cloudinary_storage',
     'cloudinary',
     'rest_framework',    
-    'app.apps.AppConfig',    
+    'app.apps.AppConfig', 
+    'drf_yasg'   
 ]
 
 MIDDLEWARE = [
