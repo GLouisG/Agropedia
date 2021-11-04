@@ -4,17 +4,19 @@ from rest_framework.views import APIView
 from app.models import Plants
 from app.serializer import PlantsSerializer
 from rest_framework.response import Response
-
+from django.views.decorators.clickjacking import xframe_options_exempt
 
 # Create your views here.
 class PlantList(APIView):
     serializer_class = PlantsSerializer
+    @xframe_options_exempt
     def get(self, request, format=None):
         plants = Plants.objects.all()
         serializers = PlantsSerializer(plants, many=True)
         return Response(serializers.data) 
 class PlantRecc(APIView):
     serializer_class = PlantsSerializer
+    @xframe_options_exempt
     def get(self, request, *args,**kwargs):
         # params = kwargs
         # params_list = map(int, list(params['pk'].split('-')))
