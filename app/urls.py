@@ -6,6 +6,7 @@ from django.urls import path
 urlpatterns=[
 
  url(r'^api/plants/$', views.PlantList.as_view(),name = "apiplants" ),
- path("api/<int:temp>/<int:alt>/", views.PlantRecc.as_view(),name = "apisearch")   
+ path("api/<int:temp>/<int:alt>/", views.PlantRecc.as_view(),name = "apisearch"),
+ path("api/ai/<str:params>", views.PlantsSuggest.as_view(), name="apisuggest")   
 ]
  
