@@ -177,7 +177,11 @@ DEFAULT_AUTO_FIELD='django.db.models.AutoField'
 # DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
-    'http://localhost:4200'
+    'http://localhost:4200',
+'https://mosesgakuhi1857.github.io/Agropedia/homepage',
+'https://mosesgakuhi1857.github.io/Agropedia/search-plant',
+'https://mosesgakuhi1857.github.io/Agropedia/',
+
 ]
 
 django_heroku.settings(locals())
